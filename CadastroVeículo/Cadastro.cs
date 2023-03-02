@@ -17,6 +17,7 @@ namespace CadastroVeículo
     {
         Veículo vi;
         Carro ca;
+
         public Form()
         {
 
@@ -25,18 +26,29 @@ namespace CadastroVeículo
 
        public void btnIncluir_Click(object sender, EventArgs e)
         {
-          
+            if (txtModelo.Text == String.Empty) return;
+
+            ca = new Carro()
+            {
+                Modelo = txtModelo.Text,
+                Cor = txtCor.Text,
+                Numero_chassi = txtChassi.Text,
+               
+            };
+            c.Incluir();
+            LimpaControles();
+            CarregarGrid("");
         }
 
         private void Form_Load(object sender, EventArgs e)
         {
             vi = new Veículo();
 
-            limpaControles();
-            carregarGrid("");
+            LimpaControles();
+            CarregarGrid("");
         }
 
-        void limpaControles()
+        void LimpaControles()
         {
             txtCódigo.Clear();
             txtCor.Clear();
@@ -45,7 +57,7 @@ namespace CadastroVeículo
             txtObs.Clear();  
         }
 
-        void carregarGrid(string pesquisa)
+        void CarregarGrid(string pesquisa)
         {
             vi = new Veículo()
             {
