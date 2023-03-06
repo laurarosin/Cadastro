@@ -13,11 +13,9 @@ using System.Windows.Forms;
 
 namespace CadastroVeículo
 {
-    public partial class Form : System.Windows.Forms.Form
+    public partial class Form: System.Windows.Forms.Form
     {
-        Veículo vi;
-        Carro ca;
-
+    
         public Form()
         {
 
@@ -26,24 +24,15 @@ namespace CadastroVeículo
 
        public void btnIncluir_Click(object sender, EventArgs e)
         {
-            if (txtModelo.Text == String.Empty) return;
+           
 
-            ca = new Carro()
-            {
-                Modelo = txtModelo.Text,
-                Cor = txtCor.Text,
-                Numero_chassi = txtChassi.Text,
-               
-            };
-            c.Incluir();
-            LimpaControles();
-            CarregarGrid("");
+
+            
         }
 
         private void Form_Load(object sender, EventArgs e)
         {
-            vi = new Veículo();
-
+           
             LimpaControles();
             CarregarGrid("");
         }
@@ -59,10 +48,7 @@ namespace CadastroVeículo
 
         void CarregarGrid(string pesquisa)
         {
-            vi = new Veículo()
-            {
-                obs = pesquisa
-            };
+           
          
         }
     }

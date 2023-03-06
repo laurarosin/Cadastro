@@ -72,7 +72,8 @@
     <Compile Include="Cadastro.Designer.cs">
       <DependentUpon>Cadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Veículo.cs" />
+    <Compile Include="Model\Cadastro.cs" />
+    <Compile Include="Model\Carro.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Carro.cs">
